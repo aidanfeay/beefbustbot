@@ -21,7 +21,7 @@ function coinflip() {
 var text,
 		screen_name,
 		id_str,
-		tweets,
+		tweets = [],
 		hashtag = 'BeefOrBustBot';
 
 setInterval(function() {
