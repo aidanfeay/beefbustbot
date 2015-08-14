@@ -1,3 +1,12 @@
+//Landing
+var http = require('http');
+
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('BeefBustBot\n');
+}).listen(process.env.PORT || 5000);
+
+//Bot
 var Bot = require('./bot')
   , config = require('./config');
 
