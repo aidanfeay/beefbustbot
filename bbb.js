@@ -21,7 +21,7 @@ function coinflip() {
 var text,
 		screen_name,
 		id_str
-		hashtag = 'BeefBustBot';
+		hashtag = 'BeefOrBustBot';
 
 setInterval(function() {
   bot.twit.get('search/tweets', { q: '%23' + hashtag + ' since:2011-11-11', count: 1 }, function(err, data, response) {
