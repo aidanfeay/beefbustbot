@@ -1,0 +1,31 @@
+{
+  "name": "beefbustbot",
+  "version": "1.0.0",
+  "description": "Beef Bust Bot",
+  "main": "./twit/lib/twitter",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alfeay/beefbustbot.git"
+  },
+  "dependencies": {
+    "twit": "2.1.0"
+  },
+  "scripts": {
+    "start": "node bbb.js"
+  },
+  "keywords": [
+    "bot"
+  ],
+  "author": "@aidanfeay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alfeay/beefbustbot/issues"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "homepage": "https://github.com/alfeay/beefbustbot#readme"
+}
