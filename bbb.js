@@ -21,7 +21,7 @@ function coinflip() {
 var text,
 		screen_name,
 		id_str
-		hashtag = 'BeefOrBust';
+		hashtag = 'BeefBustBot';
 
 setInterval(function() {
   bot.twit.get('search/tweets', { q: '%23' + hashtag + ' since:2011-11-11', count: 1 }, function(err, data, response) {
@@ -33,11 +33,11 @@ setInterval(function() {
 			if (id_str != undefined) {
 				text = data.statuses[0].text;
 				screen_name = data.statuses[0].user.screen_name;
-				console.log('Tweeting! (not really): ' + text);
 				var tweet = coinflip() + '! https://twitter.com/' + screen_name + '/status/' + id_str;
-				// bot.twit.post('statuses/update', { status: tweet }, function (err, data, response) {
-				//   console.log('Posted ' + tweet);
-				// })
+				console.log('Tweeting: ' + tweet);
+				bot.twit.post('statuses/update', { status: tweet }, function (err, data, response) {
+				  console.log('Posted ' + tweet);
+				})
 			}
 		}
 	})
