@@ -25,19 +25,17 @@ var text,
 
 setInterval(function() {
   bot.twit.get('search/tweets', { q: '%23' + hashtag + ' since:2011-11-11', count: 1 }, function(err, data, response) {
-  	var tweetObj = data.statuses[0];
 		if (err) return handleError(err);
-		if (tweetObj != undefined){
-			if (id_str == tweetObj.id_str) {
+		if (data.statuses[0] != undefined){
+			if (id_str == data.statuses[0].id_str) {
 				console.log('Sorry, duplicate tweet...');
 			} else {
-				id_str = tweetObj.id_str;
-				text = tweetObj.text;
-				screen_name = tweetObj.user.screen_name;
+				id_str = data.statuses[0].id_str;
+				text = data.statuses[0].text;
+				screen_name = data.statuses[0].user.screen_name;
 				var tweet = coinflip() + '! https://twitter.com/' + screen_name + '/status/' + id_str;
-				console.log('Tweeting: ' + tweet);
 				bot.twit.post('statuses/update', { status: tweet }, function (err, data, response) {
-				  console.log('Posted ' + tweet);
+				  console.log('Posted: ' + tweet);
 				})
 			}
 		} else {
